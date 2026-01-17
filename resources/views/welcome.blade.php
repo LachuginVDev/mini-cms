@@ -19,9 +19,67 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <div class="bg-emerald-500 text-white p-4 rounded-xl">
-            Tailwind 4 работает 🚀
+    <body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800">
+
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tight">
+            MiniCMS
         </div>
+        <nav class="space-x-6 text-sm font-medium text-slate-600">
+            <a href="#" class="hover:text-slate-900 transition">Главная</a>
+            <a href="#" class="hover:text-slate-900 transition">Посты</a>
+            <a href="#" class="hover:text-slate-900 transition">Админка</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 class="text-5xl font-bold leading-tight mb-6">
+                Современная CMS на <span class="text-emerald-600">Laravel</span>
+            </h1>
+            <p class="text-slate-600 mb-8 text-lg">
+                Учебный проект с использованием Laravel 12, Tailwind CSS 4 и Docker.
+                Чистая архитектура, быстрый фронтенд и профессиональный стек.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="bg-emerald-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-emerald-700 transition">
+                    Начать работу
+                </a>
+                <a href="#" class="border border-slate-300 px-6 py-3 rounded-xl font-medium hover:bg-slate-200 transition">
+                    Документация
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+            <div class="grid grid-cols-2 gap-6 text-center">
+                <div class="p-6 rounded-2xl bg-emerald-50">
+                    <div class="text-3xl font-bold text-emerald-600">⚡</div>
+                    <p class="mt-2 font-medium">Vite + Tailwind</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-sky-50">
+                    <div class="text-3xl font-bold text-sky-600">🐳</div>
+                    <p class="mt-2 font-medium">Docker DB</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-violet-50">
+                    <div class="text-3xl font-bold text-violet-600">🧩</div>
+                    <p class="mt-2 font-medium">MVC Архитектура</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-amber-50">
+                    <div class="text-3xl font-bold text-amber-600">🚀</div>
+                    <p class="mt-2 font-medium">Готово к росту</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-slate-500 py-10">
+        © {{ date('Y') }} MiniCMS. Laravel & Tailwind.
+    </footer>
+
     </body>
+
 </html>

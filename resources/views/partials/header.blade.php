@@ -9,6 +9,18 @@
             @if(auth()->user()->isAdmin())
                 <a href="{{ route('admin.dashboard') }}">Админка</a>
             @endif
+
+            <span class="ml-4 text-slate-500">
+                {{ auth()->user()->name }}
+            </span>
+
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button class="ml-2 text-red-500 hover:underline">Выход</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}">Войти</a>
+            <a href="{{ route('register') }}">Регистрация</a>
         @endauth
     </nav>
 </header>

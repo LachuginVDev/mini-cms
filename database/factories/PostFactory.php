@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Category;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
@@ -23,6 +23,7 @@ class PostFactory extends Factory
             'meta_description' => fake()->sentence(12),
             'image' => 'https://picsum.photos/800/500?random=' . fake()->numberBetween(1, 5000),
             'status' => fake()->randomElement(['draft', 'published', 'archived']),
+            'category_id' => Category::inRandomOrder()->first()?->id,
         ];
     }
 }

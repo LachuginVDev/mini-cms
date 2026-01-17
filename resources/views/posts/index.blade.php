@@ -20,7 +20,9 @@
                                 {{ $post->title }}
                             </a>
                         </h2>
-
+                        <span class="text-xs text-emerald-600">
+                            {{ $post->category?->title ?? 'Без категории' }}
+                        </span>
                         <p class="text-slate-600 text-sm mb-4">
                             {{ Str::limit(strip_tags($post->content), 120) }}
                         </p>

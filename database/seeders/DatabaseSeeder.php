@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::factory(5)->create();
+        Category::factory(5)->create();
         Post::factory(20)->create();
 
         $users = User::all();

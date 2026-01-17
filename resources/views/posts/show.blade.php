@@ -3,6 +3,13 @@
 @section('title', $post->meta_title)
 
 @section('content')
+    <x-breadcrumbs :items="[
+    ['title' => 'Главная', 'url' => route('home')],
+    ['title' => 'Посты', 'url' => route('posts.index')],
+    ['title' => $post->category?->title ?? 'Без категории', 'url' => '#'],
+    ['title' => $post->title, 'url' => '']
+]" />
+
     <div class="max-w-4xl mx-auto px-6 py-12">
 
         <img src="{{ $post->image }}" class="rounded-3xl shadow mb-8">

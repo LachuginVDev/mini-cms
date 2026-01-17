@@ -65,4 +65,10 @@ class User extends Authenticatable
         return $query->where('role', 'admin');
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+
 }

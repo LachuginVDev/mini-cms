@@ -36,4 +36,10 @@ class Post extends Model
         return $query->where('is_published', true);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+
 }

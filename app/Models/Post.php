@@ -31,15 +31,21 @@ class Post extends Model
         });
     }
 
-    public function scopePublished($query)
-    {
-        return $query->where('is_published', true);
-    }
-
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published');
+    }
+
 
 
 }

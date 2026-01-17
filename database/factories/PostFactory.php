@@ -21,8 +21,8 @@ class PostFactory extends Factory
             'content' => fake()->paragraphs(5, true),
             'meta_title' => fake()->sentence(6),
             'meta_description' => fake()->sentence(12),
-            'image' => null,
-            'is_published' => fake()->boolean(80),
+            'image' => 'https://picsum.photos/800/500?random=' . fake()->numberBetween(1, 5000),
+            'status' => fake()->randomElement(['draft', 'published', 'archived']),
         ];
     }
 }

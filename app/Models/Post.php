@@ -17,11 +17,8 @@ class Post extends Model
         'meta_title',       // <title>
         'meta_description', // <meta name="description">
         'image',            // OG image
-        'is_published',
-    ];
-
-    protected $casts = [
-        'is_published' => 'boolean',
+        'status',           // draft, published, archived
+        'category_id',      // ID категории
     ];
 
     protected static function booted()

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Category;
+use Database\Seeders\SettingSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Сначала создаем настройки
+        $this->call(SettingSeeder::class);
 
+        // Создаем админа
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'test@example.com',
@@ -25,15 +28,21 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
+        // Создаем обычных пользователей
         User::factory(5)->create();
+
+        // Создаем категории
         Category::factory(5)->create();
+
+        // Создаем посты (с картинками из picsum.photos)
         Post::factory(20)->create();
 
+        // Создаем комментарии для постов
         $users = User::all();
         $posts = Post::all();
 
         foreach ($posts as $post) {
-            Comment::factory(rand(1,5))->create([
+            Comment::factory(rand(1, 5))->create([
                 'post_id' => $post->id,
                 'user_id' => $users->random()->id,
             ]);

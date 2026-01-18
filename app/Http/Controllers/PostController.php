@@ -16,6 +16,7 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)
             ->where('status', 'published')
+            ->with(['comments.user', 'category', 'user'])
             ->firstOrFail();
 
         return view('posts.show', compact('post'));

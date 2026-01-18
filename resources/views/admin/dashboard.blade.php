@@ -1,22 +1,21 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Админ-панель') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <p class="mb-4">{{ __("Добро пожаловать в админ-панель!") }}</p>
-                    <div class="mt-4">
-                        <a href="{{ route('admin.posts.index') }}" class="text-blue-600 hover:underline">
-                            {{ __('Управление постами') }}
-                        </a>
-                    </div>
-                </div>
+@section('title', 'Админ-панель')
+
+@section('content')
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold mb-10">Админ-панель</h1>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+            <p class="mb-6 text-lg text-slate-700">Добро пожаловать в админ-панель!</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ route('admin.posts.index') }}" class="px-6 py-3 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition-colors shadow-sm">
+                    Управление постами
+                </a>
+                <a href="{{ route('admin.settings.edit') }}" class="px-6 py-3 bg-slate-600 text-white font-medium rounded-lg hover:bg-slate-700 transition-colors shadow-sm">
+                    Настройки баннера
+                </a>
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

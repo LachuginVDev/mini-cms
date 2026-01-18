@@ -29,7 +29,7 @@ class PostRequest extends FormRequest
             'content' => ['required', 'string'],
             'meta_title' => ['nullable', 'string', 'max:255'],
             'meta_description' => ['nullable', 'string', 'max:500'],
-            'image' => ['nullable', 'string', 'max:500'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
             'status' => ['required', 'string', Rule::in(['draft', 'published', 'archived'])],
             'category_id' => ['nullable', 'exists:categories,id'],
         ];

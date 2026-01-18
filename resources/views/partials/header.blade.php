@@ -6,6 +6,8 @@
         <a href="{{ route('posts.index') }}">Посты</a>
 
         @auth
+            <a href="{{ route('user.posts.index') }}">Мои посты</a>
+            
             @if(auth()->user()->isAdmin())
                 <a href="{{ route('admin.dashboard') }}">Админка</a>
             @endif

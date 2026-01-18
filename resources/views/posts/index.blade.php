@@ -16,7 +16,7 @@
             @foreach($posts as $post)
                 <article class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
 
-                    <img src="{{ $post->image }}" class="h-48 w-full object-cover">
+                    <img src="{{ $post->image_url ?? $post->image }}" alt="{{ $post->title }}" class="h-48 w-full object-cover">
 
                     <div class="p-6">
                         <h2 class="font-bold text-lg mb-2">

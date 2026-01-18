@@ -10,9 +10,9 @@
                 <a href="{{ route('admin.dashboard') }}">Админка</a>
             @endif
 
-            <span class="ml-4 text-slate-500">
+            <a href="{{ route('profile.edit') }}" class="ml-4 text-slate-500 hover:text-slate-900">
                 {{ auth()->user()->name }}
-            </span>
+            </a>
 
             <form method="POST" action="{{ route('logout') }}" class="inline">
                 @csrf
